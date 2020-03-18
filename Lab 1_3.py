@@ -10,6 +10,7 @@ y0 = 500
 x = 0
 y = 0
 
+
 root = Tk()
 canv = Canvas(root, width=1200, height=700)
 canv.create_line(500, 1000, 500, 0, width=2, arrow=LAST)

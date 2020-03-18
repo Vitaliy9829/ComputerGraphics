@@ -9,6 +9,7 @@ x0 = 500
 y0 = 500
 x = 0
 y = 0
+colors = ['red','green','blue', 'yellow','brown']
 
 Q = 1
 
@@ -18,11 +19,14 @@ canv.create_line(500, 1000, 500, 0, width=2, arrow=LAST)
 canv.create_line(0, 500, 1000, 500, width=2, arrow=LAST)
 canv.pack()
 
-while Q <50:
-    x = randint(0, 1000)
-    y = randint(0, 500)
-    tr = np.array([[m, 0, 0],
-                   [0, m, 0],
+while Q < 50:
+    x = randint(0, 800)
+    y = randint(0, 400)
+    m = randint(1,5)
+    ind = randint(0,4)
+
+    tr = np.array([[m/10, 0, 0],
+                   [0, m/10, 0],
                    [x, y, 0]])
 
     a = np.array([[x0, y0, 1],
@@ -40,13 +44,11 @@ while Q <50:
     for i in range(1, 8):
         if i == 4:
             pass
-        elif i == 2:
-            canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2, fill='red')
         else:
-            canv.create_line(a[i][0], a[i][1], a[i + 1][0], a[i + 1][1], width=2)
+            canv.create_line(a[i][0], a[i][1], a[i + 1][0], a[i + 1][1], width=2, fill=colors[ind])
 
     for i in range(1, 5):
-        canv.create_line(a[i][0], a[i][1], a[i + 4][0], a[i + 4][1], width=2)
+        canv.create_line(a[i][0], a[i][1], a[i + 4][0], a[i + 4][1], width=2, fill=colors[ind])
     canv.update()
     time.sleep(0.1)
     Q = Q + 1

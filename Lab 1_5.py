@@ -49,6 +49,10 @@ while True:
         m = 1
     else:
         m = m - 0.01
+    if x < 300:
+        x = x + 1
+    if y < 300:
+        y = y + 1
     canv.update()
     time.sleep(0.01)
 
