@@ -66,7 +66,7 @@ root.mainloop()
 #               [417, 77, -50 ,1]])
 
 
-# canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2)
+    # canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2)
     # canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2)
     # canv.create_line(a[3][0], a[3][1], a[4][0], a[4][1], width=2)
     #

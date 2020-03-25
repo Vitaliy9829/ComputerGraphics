@@ -23,9 +23,9 @@ while True:
         canv.create_text(25, p, text=str(k), fill="purple", font=("Arial", "10"))
 
     tr = np.array([
-        [cos(t), sin(t), 0, 0],
+        [cos(t), sin(t), -sin(t), 0],
         [-sin(t), cos(t), sin(t), 0],
-        [0, -sin(t), cos(t), 0],
+        [sin(t), -sin(t), cos(t), 0],
         [350, 320, 0, 1]
     ])
 

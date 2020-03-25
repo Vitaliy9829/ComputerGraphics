@@ -6,7 +6,6 @@ from math import *
 root = Tk()
 t = 0
 m = 1
-
 X = 200
 Y = 100
 
@@ -29,10 +28,10 @@ while True:
     tr = np.array([
         [m, 0, 0],
         [0, m, 0],
-        [X*cos(t), Y*sin(t), 1]
+        [X*cos(t),Y*sin(t), 1]
     ])
 
-    a = np.array([[500, 700, 1],
+    a = np.array([[0, 0, 1],
                   [300, 452, 1],
                   [275, 400, 1],
                   [400, 375, 1],
@@ -91,6 +90,13 @@ while True:
     canv.update()
     time.sleep(0.01)
     t = t + 0.05
+    # if m < 0.3:
+    #     m = 1
+    #     X = 300
+    # else:
+    #     m = m - 0.001
+    #     X = X - 0.2
+
 
     canv.delete("all")
 root.mainloop()
