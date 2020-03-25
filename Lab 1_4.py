@@ -10,14 +10,12 @@ y0 = 500
 x = 0
 y = 0
 
-R = 3
-A = 3
-
 root = Tk()
 canv = Canvas(root, width=1200, height=700)
 
 while True:
     canv.destroy()
+
     canv = Canvas(root, width=1200, height=700)
     canv.create_line(500, 1000, 500, 0, width=2, arrow=LAST)
     canv.create_line(0, 500, 1000, 500, width=2, arrow=LAST)
@@ -51,7 +49,7 @@ while True:
     if x < 900:
         for i in range(4):
             x = x + i
-    if y < 500:
+    else:
         for i in range(4):
             y = y + i
     canv.update()
