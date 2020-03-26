@@ -23,30 +23,28 @@ while True:
         canv.create_text(25, p, text=str(k), fill="purple", font=("Arial", "10"))
 
     tr = np.array([
-        [cos(t), sin(t), -sin(t), 0],
-        [-sin(t), cos(t), sin(t), 0],
-        [sin(t), -sin(t), cos(t), 0],
-        [350, 320, 0, 1]
+        [cos(t), 0, sin(t), 0],
+        [0, 1, 0, 0],
+        [-sin(t), 0, cos(t), 0],
+        [350, 350, 0, 1]
     ])
-
-
     a = np.array([
-        [-200, 150, 100, 1],
-        [-25, -100, 100, 1],
-        [150, 150, 100, 1],
-        [-100, -75, -100, 1],
+        [0, -300, -100, 1],
+        [-200, 100, -200, 1],
+        [200, 100, -200, 1],
+        [0, 100, 100, 1]
     ])
+
     a = a.dot(tr)
 
-
+    canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2)
+    canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2, dash=(4, 2))
+    canv.create_line(a[3][0], a[3][1], a[1][0], a[1][1], width=2, dash=(4, 2))
 
     canv.create_line(a[0][0], a[0][1], a[1][0], a[1][1], width=2)
-    canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2, fill="red")
-
-    canv.create_line(a[0][0], a[0][1], a[3][0], a[3][1], width=2)
     canv.create_line(a[0][0], a[0][1], a[2][0], a[2][1], width=2)
-    canv.create_line(a[1][0], a[1][1], a[3][0], a[3][1], width=2)
-    canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2)
+    canv.create_line(a[0][0], a[0][1], a[3][0], a[3][1], width=2, dash=(4, 2))
+
     canv.update()
     time.sleep(0.01)
 

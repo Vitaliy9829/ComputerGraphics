@@ -27,10 +27,10 @@ tr = np.array([[m, 0, 0],
                [0, m, 0],
                [0, 0, 0]])
 
-a = np.array([[100.5, 300.5, 1],
-              [250.5, 600.5, 1],
-              [410.5, 300.5, 1],
-              [250.5, 150.5, 1]])
+a = np.array([[100, 300, 1],
+              [200, 370, 1],
+              [400, 300, 1],
+              [250, 100, 1]])
 a = a.dot(tr)
 
 canv.create_line(a[0][0], a[0][1], a[1][0], a[1][1], width=2)
@@ -38,7 +38,7 @@ canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2)
 
 
 canv.create_line(a[0][0], a[0][1], a[3][0], a[3][1], width=2)
-canv.create_line(a[0][0], a[0][1], a[2][0], a[2][1], width=2, fill="red")
+canv.create_line(a[0][0], a[0][1], a[2][0], a[2][1], width=2, dash=(4,2))
 canv.create_line(a[1][0], a[1][1], a[3][0], a[3][1], width=2)
 canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2)
 
@@ -104,3 +104,59 @@ root.mainloop()
     # canv.create_line(a[6][0], a[6][1], a[7][0], a[7][1], width=2)
     #
     # canv.create_line(a[4][0], a[4][1], a[7][0], a[7][1], width=2)
+
+
+# a = np.array([
+#               [100, 52, 100 , 1],
+#               [75, 0, 100 , 1],
+#               [200, -25, 100 , 1],
+#               [225, 25, 100 ,1],
+#
+#               [100, -102, -100 ,1],
+#               [75, -150, -100 ,1],
+#               [200, -175, -100 ,1],
+#               [225, -125, -100 ,1],
+#
+#               [107, 50, 100 ,1],
+#               [85, 2, 100 ,1],
+#               [195, -18, 100 ,1],
+#               [217, 27, 100 ,1],
+#
+#               [107, -100, -100 ,1],
+#               [85, -143, -100 ,1],
+#               [195, -165, -100 ,1],
+#               [217, -123, -100 ,1]])
+
+
+# canv.create_line(a[0][0], a[0][1], a[1][0], a[1][1], width=2)
+# canv.create_line(a[1][0], a[1][1], a[2][0], a[2][1], width=2)
+# canv.create_line(a[2][0], a[2][1], a[3][0], a[3][1], width=2)
+#
+# canv.create_line(a[4][0], a[4][1], a[5][0], a[5][1], width=2)
+# canv.create_line(a[5][0], a[5][1], a[6][0], a[6][1], width=2)
+# canv.create_line(a[6][0], a[6][1], a[7][0], a[7][1], width=2)
+#
+# canv.create_line(a[0][0], a[0][1], a[4][0], a[4][1], width=2)
+# canv.create_line(a[1][0], a[1][1], a[5][0], a[5][1], width=2)
+# canv.create_line(a[2][0], a[2][1], a[6][0], a[6][1], width=2, fill='red')
+# canv.create_line(a[3][0], a[3][1], a[7][0], a[7][1], width=2)
+#
+# #
+# canv.create_line(a[8][0], a[8][1], a[9][0], a[9][1], width=2)
+# canv.create_line(a[9][0], a[9][1], a[10][0], a[10][1], width=2)
+# canv.create_line(a[10][0], a[10][1], a[11][0], a[11][1], width=2)
+#
+# canv.create_line(a[12][0], a[12][1], a[13][0], a[13][1], width=2)
+# canv.create_line(a[13][0], a[13][1], a[14][0], a[14][1], width=2)
+# canv.create_line(a[14][0], a[14][1], a[15][0], a[15][1], width=2)
+#
+# canv.create_line(a[8][0], a[8][1], a[12][0], a[12][1], width=2)
+# canv.create_line(a[9][0], a[9][1], a[13][0], a[13][1], width=2, fill='red')
+# canv.create_line(a[10][0], a[10][1], a[14][0], a[14][1], width=2)
+# canv.create_line(a[11][0], a[11][1], a[15][0], a[15][1], width=2)
+#
+# canv.create_line(a[8][0], a[8][1], a[0][0], a[0][1], width=2)
+# canv.create_line(a[11][0], a[11][1], a[3][0], a[3][1], width=2)
+# canv.create_line(a[10][0], a[10][1], a[11][0], a[11][1], width=2)
+# canv.create_line(a[12][0], a[12][1], a[4][0], a[4][1], width=2)
+# canv.create_line(a[15][0], a[15][1], a[7][0], a[7][1], width=2)

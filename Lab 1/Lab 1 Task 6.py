@@ -88,14 +88,16 @@ while True:
     canv.create_line(a[16][0], a[16][1], a[8][0], a[8][1], width=2)
 
     canv.update()
-    time.sleep(0.01)
-    t = t + 0.05
-    # if m < 0.3:
-    #     m = 1
-    #     X = 300
-    # else:
-    #     m = m - 0.001
-    #     X = X - 0.2
+    time.sleep(0.001)
+    t = t + 0.015
+
+    if t >= 2:
+        m -= 0.002
+        if t >= 4:
+            m += 0.0038
+            if t >= 6.25:
+                t = 0
+                m = 1
 
 
     canv.delete("all")
