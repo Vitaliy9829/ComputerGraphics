@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Еліпс</title>
+    </head>
+    <body>
+
+        <canvas id="move_ellip" width="500" height="350" style="border: 1px solid #000000;">
+        </canvas>
+        <button onclick="moveElliptic()">Move</button>
+
+        <script>
+            var canvas = document.getElementById("move_ellip");
+            var context = canvas.getContext("2d");
+            context.fillStyle = "#888888"; 
+
+            var h = 250;
+            var k = 175;
+            var a = 150;
+            var b = 100;
+            var x = h - a;
+            var y = k;
+            var y1 = b / a;
+            var radius = 5;
+            var startAngle = 0;
+            var endAngle = 2 * Math.PI;
+            var A = Math.pow(a, 2);
+            // var XH = Math.pow();
+            context.beginPath();
+            context.arc(x, y, radius, startAngle, endAngle);
+            context.fill();
+
+            function moveElliptic() {
+                var a2 = Math.sqrt(A - Math.pow((x - h), 2));
+                var f = y1 * a2;
+                if (x <= h + a) {
+                    y = k - f;
+                    // верхня крива
+                    context.beginPath();
+                    context.arc(x, y, radius, startAngle, endAngle);
+                    context.fill();
+
+                    y = k + f;
+                    // нижня крива
+                    context.beginPath();
+                    context.arc(x, y, radius, startAngle, endAngle);
+                    context.fill();
+
+                    x += 1;
+                    setTimeout(function () { moveElliptic(); }, 1);
+                }
+            }
+        </script>
+
+    </body>
+</html>
